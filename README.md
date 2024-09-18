@@ -1,4 +1,5 @@
-![Cover image](https://github.com/nileshparab42/Diabetes-Detection/blob/master/Assets/DD-Cover.png)
+![hq720](https://github.com/user-attachments/assets/ec1dab2f-7809-4ab7-a817-1cd0d4109220)
+
 
 # Diabetes Detection
 
@@ -7,9 +8,6 @@ A diabetes detection machine learning project involves using data and algorithms
 ## Description
 
 Diabetes detection machine learning project is a system that uses algorithms, statistical models and historical data to predict the likelihood of an individual having diabetes. The goal is to use features like Glucose, age, and Blood Pressure to identify individuals who have diabetes or are at risk of developing it. Machine learning models are trained using this data and can then be used to make predictions on new individuals.
-
-
-![Home page](https://github.com/nileshparab42/Diabetes-Detection/blob/master/Assets/home.png)
 
 
 ## About Dataset
@@ -50,7 +48,8 @@ The process of feature selection in machine learning is used to identify and sel
 
 #### correlation matrix
 
-![heat map](https://github.com/nileshparab42/Diabetes-Detection/blob/master/Assets/heatmap.png)
+![image](https://github.com/user-attachments/assets/6fdebe29-a690-40ab-86bc-4230015f10e3)
+
 
 A correlation matrix can be used to identify highly correlated features, which can then be removed or consolidated. Highly correlated features can cause a problem in machine learning models as they can introduce multicollinearity, which can lead to unstable and unreliable model estimates.
 
@@ -104,21 +103,23 @@ Outlier treatment is the process of identifying and handling extreme values or o
 
 ### Evaluation of algorithm
 
-![Results](https://github.com/nileshparab42/Diabetes-Detection/blob/master/Assets/res2.png)
+![image](https://github.com/user-attachments/assets/0ac05eb4-2db1-439d-a838-49c974c886dd)
+
+![image](https://github.com/user-attachments/assets/b8fef941-2ba6-42b6-955c-f84ecc68dbaa)
 
 - **Confusion Matrix**
 
 A confusion matrix is a table that is used to define the performance of a classification algorithm. Each row of the matrix represents the instances in a predicted class, while each column represents the instances in an actual class (or vice versa). The name stems from the fact that it makes it easy to see if the system is confusing two classes (i.e. commonly mislabeling one as another). The diagonal elements represent the number of points for which the predicted label is equal to the true label, while off-diagonal elements are those that are mislabeled by the classifier. It is a useful tool for understanding the performance of a classification algorithm, including the types of errors that the classifier is making.
 
+
+
+
 **Confusion Matrix accuracy of Algorithms:**
 
-- Logistic regression: 0.8053435114503816
-- Naive Bayes classifier: 0.7709923664122137
-- K-Nearest Neighbors (KNN): 0.7366412213740458
-- A Decision Tree Classifier: 0.7404580152671756
-- Support Vector Classifier (SVC): 0.7977099236641222
+- K-Nearest Neighbors (KNN): 0.77
+- Neural Network: 0.82
 
-We chose the Logistic regression because the highest Confusion matrix accuracy.
+We chose the Neural Network because the highest Confusion matrix accuracy.
 
 ### Hyperparameter Tuning
 
@@ -126,122 +127,50 @@ Hyperparameter tuning is the process of selecting the best set of hyperparameter
 
 **Grid search:** is a technique used to tune the hyperparameters of a machine learning model. It is a systematic way of going through multiple combinations of parameter settings, cross-validating as it goes, and returning the best set of parameters that yield the highest performance for a given model. The technique involves specifying a set of values for each hyperparameter, creating a "grid" of all possible combinations of those values, and then training and evaluating a model for each combination of values. 
 
-**Hyperparameters for Logistic regression :**
+**Hyperparameters for KNN :**
 
 - solvers: ['newton-cg', 'lbfgs', 'liblinear']
 - penalty: ['l2']
 - c_values: [100, 10, 1.0, 0.1, 0.01]
 
-![Results heatmap](https://github.com/nileshparab42/Diabetes-Detection/blob/master/Assets/res1.png)
-Confusion matrix accuracy for Logistic regression After Hyper Tuning(Complete dataset): 0.7760416666666666
+![image](https://github.com/user-attachments/assets/c6658f10-0bbb-416d-a532-1896bb5fa5e2)
+![image](https://github.com/user-attachments/assets/1413469a-94aa-4793-b2d7-2782949c3098)
 
-So, here we are getting better results with Logistic regression. Hence we are selecting a Logistic regression as the main model for the web app.
+Confusion matrix accuracy for KNN nearist neighbours After Hyper Tuning(Complete dataset): 0.80 when K= 20
 
-## Web App for project
+# Future Improvements
 
-**Flask** is a web framework for building web applications using the Python programming language. It is a micro-framework that provides the basic functionality needed to build web applications, such as routing and request handling, without including a lot of additional features or libraries. This makes it lightweight and easy to use, but also allows for flexibility and customization.
+Experiment with more complex models like Gradient Boosting Machines (e.g., XGBoost, LightGBM) to improve prediction accuracy.
+Implement ensemble methods to combine the strengths of multiple models.
+Real-Time Data Ingestion and Prediction:
 
-![Value insertion](https://github.com/nileshparab42/Diabetes-Detection/blob/master/Assets/input.png)
+Allow users to upload their own data for real-time predictions through the Streamlit interface.
+Enable real-time model updates when new data is introduced, ensuring the system remains accurate over time.
+Model Explainability:
 
-After inserting values for the attribute such as the Glucose, age, and Blood Pressure our flask web app will predict the whether report indicates the presence of diabetes or not.
+Incorporate model interpretability tools like SHAP (SHapley Additive exPlanations) or LIME (Local Interpretable Model-agnostic Explanations) to help users understand how the model makes predictions.
+Provide visual explanations of which features most strongly influence the prediction.
+User Authentication:
 
-![Predictions](https://github.com/nileshparab42/Diabetes-Detection/blob/master/Assets/output.png)
+Add a secure user authentication system for the Streamlit app, ensuring that only authorized users can access or upload data.
+Optionally, create a user dashboard where individuals can track their health over time and see historical predictions.
+Deployment Scaling:
 
-## Installation
+Improve scalability by deploying the Streamlit app on cloud platforms like AWS, Google Cloud, or Heroku for faster load times and handling of larger datasets.
+Optimize the deployment to support more concurrent users.
+Mobile-Friendly Interface:
 
-### Get the Diabetes Detection.
+Optimize the Streamlit application for mobile browsers to provide a better experience on smartphones and tablets.
+Database Integration:
 
-To download a diabetes detection, you can use the git clone command. This command creates a copy of the repository in a new directory on your local machine.
-```
-git clone https://github.com/nileshparab42/Diabetes-Detection.git
-```
-To set up the project, you can use the pip command to install the required packages specified in the requirements.txt file.
-```
-pip install -r requirements.txt
-```
-This will install all of the required packages for the project. If you are using a virtual environment for the project, you should activate the environment before running this command.
-```
-pip install virtualenv
-virtualenv myenv
-source myenv/bin/activate
-pip install -r requirements.txt
-```
-This will create a new virtual environment called myenv, activate it, and then install the required packages.
+Integrate a database to store patient data and prediction results securely.
+Use this data for future research and model retraining, ensuring the system evolves with new insights.
+Incorporating Additional Health Metrics:
 
-You can also specify the notebook file location or the working directory, after the command "jupyter notebook" or "jupyter lab" like:
-```
-jupyter notebook /path/to/notebook/directory
-```
-or
-```
-jupyter lab /path/to/notebook/directory
-```
-It will open the Jupyter notebook or lab in the specified directory, making it easier to navigate to the notebook you want to open.
+Extend the model to include other health metrics such as blood pressure, cholesterol levels, and physical activity, making the prediction more comprehensive.
+Long-Term Predictions and Health Recommendations:
 
+Add a feature to predict long-term diabetes risk based on continuous data collection and provide personalized health recommendations based on the predictions.
+Multilingual Support:
 
-### Installation of Diabetes Detection App
-
-To install a Flask project, you can use the following commands in your command line interface:
-
-Create a new directory for your project and navigate to it in the command line:
-```
-mkdir myproject
-cd myproject
-```
-Create and activate a virtual environment using virtualenv:
-```
-virtualenv venv
-source venv/bin/activate
-```
-or conda:
-
-```
-conda create --name myenv
-conda activate myenv
-```
-Install Flask and any other required dependencies by running:
-```
-pip install flask
-```
-and
-```
-pip install -r requirements.txt
-```
-the project has a requirements file.
-
-Create a new file named `app.py` or `main.py` in the project directory:
-Copy code
-```
-touch app.py
-```
-In the `app.py` or `main.py` file, import Flask, create an instance of the Flask class, and define the routes and functions that will handle the requests.
-
-Run the application by executing:
-
-```
-flask run
-```
-or
-
-```
-python app.py
-```
-or
-```
-python main.py
-```
-
-This will start the development server and make the application accessible at "http://localhost:5000"
-
-If you want to deploy your application to a production environment, you can use a web server like Gunicorn or uWSGI to serve the application.
-It's worth noting that you can also use frameworks like Flask-CLI or Flask-Script to create more advanced command-line scripts for your application.
-
-## Authors
-
-- [Nilesh Parab](https://github.com/nileshparab42) (Project Lead) - [Website](https://nileshparab10.blogspot.com/)
-  
-
-## Acknowledgements
-
-- This project was inspired by the work of the [CodeWithHarry](https://www.youtube.com/@CodeWithHarry).
-- We also used resources and tools from the [GeeksforGeeks](https://www.geeksforgeeks.org/speech-recognition-in-python-using-google-speech-api/) to develop and test our project.
+Add support for multiple languages to make the application more accessible to non-English speakers.
